@@ -1,19 +1,12 @@
 {
-  "name": "cypress-class",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/step_definitions/**/*.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "open": "^11.0.0"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8"
   },
   "devDependencies": {
-    "cypress": "^15.10.0"
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.1"
   }
 }
