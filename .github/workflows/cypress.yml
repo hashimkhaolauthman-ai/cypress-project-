@@ -23,10 +23,15 @@ jobs:
         run: npm ci
 
       - name: Install Cypress binary
-        run: npx cypress install
+        run: npx cypress install --force
 
       - name: Verify Cypress
         run: npx cypress verify
 
+      - name: Ensure Cypress CLI is executable
+        run: |
+          chmod +x ./node_modules/.bin/cypress
+          chmod +x ./node_modules/cypress/bin/cypress
+
       - name: Run Cypress tests
-        run: npm test
+        run: ./node_modules/.bin/cypress run --headless --browser electron
